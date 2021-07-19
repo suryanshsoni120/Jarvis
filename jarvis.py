@@ -40,7 +40,7 @@ def wishMe():
     else:
         speak("Good Evening Sir!")
 
-    speak("I am Meera. How may I help you?")
+    speak("I am Jarvis. How may I help you?")
 
 
 def takeCommand():
@@ -66,8 +66,8 @@ def sendEmail(to, content):
     server = smtplib.SMTP('smtp.gmail.com', 587)
     server.ehlo()
     server.starttls()
-    server.login('surisoni10@gmail.com', 'Imsad@2020')
-    server.sendmail('surisoni10@gmail.com', to, content)
+    server.login('Users email id', 'Users password')
+    server.sendmail('Receipents email', to, content)
     server.close()
 
 
@@ -148,21 +148,12 @@ if __name__ == "__main__":
             speak("opening lms")
 
         elif 'open notebook' in query:
-            nb_path = "C:\\Users\\Suryansh Soni\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\Anaconda3 (64-bit)\\Jupyter Notebook (Anaconda).lnk"
+            nb_path = "Path of Jupyter Notebook in your PC"
             os.startfile(nb_path)
             speak("opening jupyter notebook")
 
-        elif 'open spice' in query:
-            lt_path = "C:\\Users\\Suryansh Soni\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\LTspice XVII.lnk"
-            os.startfile(lt_path)
-            speak("opening LT spice")
-
-        elif 'close spice' in query:
-            speak('closing LT spice')
-            os.system("taskkill /f /im LTspiceXVII.exe")
-
         elif 'open notepad plus plus' in query:
-            npath = "C:\\Program Files\\Notepad++\\notepad++.exe"
+            npath = "Path of Notepad ++ in your PC"
             os.startfile(npath)
             speak("opening notepad ++")
 
@@ -171,7 +162,7 @@ if __name__ == "__main__":
             os.system("taskkill /f /im notepad++.exe")
 
         elif 'open teams' in query:
-            tpath = "C:\\Users\\Suryansh Soni\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\Microsoft Teams.lnk"
+            tpath = "Path of Microsoft Teams in your PC"
             os.startfile(tpath)
             speak("opening microsoft teams")
 
@@ -186,15 +177,6 @@ if __name__ == "__main__":
         elif 'close cmd' in query:
             speak('closing command prompt')
             os.system("taskkill /f /im cmd.exe ")
-
-        elif 'open matlab' in query:
-            mpath = "C:\\Program Files\\MATLAB\\R2020b\\bin\\matlab.exe"
-            os.startfile(mpath)
-            speak("opening matlab")
-
-        elif 'close matlab' in query:
-            speak('closing matlab')
-            os.system("taskkill /im matlab.exe")
 
         elif 'open camera' in query:
             speak("opening camera")
@@ -212,13 +194,6 @@ if __name__ == "__main__":
             print(pic)
             cam.release()
             cv2.destroyAllWindows()
-
-        elif 'play music' in query:
-            speak("playing music")
-            music_dir = "C:\\Users\\Suryansh Soni\\Desktop\\Songs"
-            songs = os.listdir(music_dir)
-            rs = random.choice(songs)
-            os.startfile(os.path.join(music_dir, rs))
 
         elif 'time' in query:
             strTime = datetime.datetime.now().strftime("%H:%M:%S")
@@ -240,8 +215,8 @@ if __name__ == "__main__":
             else:
                 speak("User not found sir")
 
-        # elif 'send message' in query:
-                #kit.sendwhatmsg(person, msg, time_hour, time_min)
+        elif 'send message' in query:
+                kit.sendwhatmsg(person, msg, time_hour, time_min)
 
         elif 'tell me a joke' in query:
             joke = pyjokes.get_joke()
