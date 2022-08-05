@@ -15,8 +15,7 @@ import requests
 from bs4 import BeautifulSoup
 from pywikihow import search_wikihow
 
-mail_ids = {"suri": "surisoni10@gmail.com", "suryansh": "suryansh.s@somaiya.edu", "dad": "kamal.soni@icicilombard.com",
-            "brother": "shreyanshsoni0107@gmail.com", "aash": "aaps2051@gmail.com", "jainam": "jainam02812@gmail.com"}
+mail_ids = {"suryansh": "surisoni10@gmail.com", "dad": "kamal.soni@icicilombard.com",  "brother": "shreyanshsoni0107@gmail.com"}
 
 engine = pyttsx3.init('sapi5')
 voices = engine.getProperty('voices')
