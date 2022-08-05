@@ -270,34 +270,6 @@ if __name__ == "__main__":
         # elif 'let the system sleep' in query:
         #     os.system("rundll32.exe powerprof.dll,SetSuspendState 0,1,0")
 
-        elif 'detect' in query:
-            # capture = cv2.VideoCapture(0,cv2.CAP_DSHOW)
-            # cascade_classifier = cv2.CascadeClassifier(cv2.data.haarcascades +'C:\\Users\\Suryansh Soni\\Desktop\\My Folder\\Jarvis\\Face Detect\\haarcascade_frontalface_default.xml')
-            # while True:
-            #     ret, frame = capture.read()
-            #     color_img = cv2.cvtColor(frame,cv2.COLOR_BGR2GRAY)
-            #     detection = cascade_classifier.detectMultiScale(color_img,1.1,5)
-            #     if (len(detection) > 1):
-            #         (x,y,width,height) = detection[0]
-            #         cv2.rectangle(color_img,(x,y),(x+width,y+height),(255,0,0),2)
-            #     cv2.imshow('Image', color_img)
-            #     if cv2.waitKey(1) & 0xFF == ord('q'):
-            #         break
-            # capture.release()
-            # cv2.destroyAllWindows()
-            face_cascade = cv2.CascadeClassifier(
-                'C:\\Users\\Suryansh Soni\\Desktop\\My Folder\\Jarvis\\Face Detect\\haarcascades\\haarcascade_frontalface_default.xml')
-            color_img = cv2.imread(
-                'C:\\Users\\Suryansh Soni\\Pictures\\Saved Pictures\\spidey 2.png')
-            gray_img = cv2.cvtColor(color_img, cv2.COLOR_BGR2GRAY)
-            faces = face_cascade.detectMultiScale(gray_img, 1.1, 5)
-            for(x, y, width, height) in faces:
-                cv2.rectangle(color_img, (x, y),
-                              (x+width, y+height), (255, 0, 0), 4)
-            cv2.imshow("Image", color_img)
-            cv2.waitKey()
-            cv2.destroyAllWindows()
-
         elif 'go to sleep' in query:
             speak("goodbye sir!")
             os.abort()
